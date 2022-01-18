@@ -20,10 +20,33 @@ const drawGrid = () => {
   }
 };
 
+const drawNewGrid = (size) => {
+  size = parseInt(prompt("Enter a number between 1 - 100 for your grid size."));
+
+  if (size < 1 || size > 100) {
+    alert("Please enter a number between 1 -  100.");
+    drawGrid();
+  } else {
+    gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+    gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+
+    for (let i = 0; i < size * size; i++) {
+      let gridSquares = document.createElement("div");
+
+      gridSquares.addEventListener("mouseover", () => {
+        gridSquares.classList.add("square");
+      });
+
+      gridContainer.appendChild(gridSquares);
+    }
+  }
+};
+
 const clearGrid = () => {
   while (gridContainer.firstChild) {
     gridContainer.removeChild(gridContainer.firstChild);
   }
+  drawNewGrid();
 };
 
 drawGrid();
