@@ -6,7 +6,7 @@ const drawGrid = () => {
   gridContainer.style.display = "grid";
   gridContainer.style.gridTemplateRows = "repeat(16, 1fr)";
   gridContainer.style.gridTemplateColumns = "repeat(16, 1fr)";
-  gridContainer.style.border = "2px solid black";
+  gridContainer.style.border = "4px solid black";
 
   for (let i = 0; i < 16 * 16; i++) {
     let gridSquares = document.createElement("div");
