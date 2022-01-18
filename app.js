@@ -1,4 +1,5 @@
 const gridContainer = document.querySelector(".grid");
+const clearButton = document.querySelector(".clear");
 
 const drawGrid = () => {
   gridContainer.style.width = "960px";
@@ -19,4 +20,12 @@ const drawGrid = () => {
   }
 };
 
+const clearGrid = () => {
+  while (gridContainer.firstChild) {
+    gridContainer.removeChild(gridContainer.firstChild);
+  }
+};
+
 drawGrid();
+
+clearButton.addEventListener("click", clearGrid);
