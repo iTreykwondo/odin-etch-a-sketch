@@ -2,14 +2,16 @@ const gridContainer = document.querySelector(".grid");
 const clearButton = document.querySelector(".clear");
 
 const drawGrid = () => {
+  const DEFAULT_SIZE = 16;
+
   gridContainer.style.width = "960px";
   gridContainer.style.height = "700px";
   gridContainer.style.display = "grid";
-  gridContainer.style.gridTemplateRows = "repeat(16, 1fr)";
-  gridContainer.style.gridTemplateColumns = "repeat(16, 1fr)";
+  gridContainer.style.gridTemplateRows = `repeat(${DEFAULT_SIZE}, 1fr)`;
+  gridContainer.style.gridTemplateColumns = `repeat(${DEFAULT_SIZE}, 1fr)`;
   gridContainer.style.border = "4px solid black";
 
-  for (let i = 0; i < 16 * 16; i++) {
+  for (let i = 0; i < DEFAULT_SIZE * DEFAULT_SIZE; i++) {
     let gridSquares = document.createElement("div");
 
     gridSquares.addEventListener("mouseover", () => {
